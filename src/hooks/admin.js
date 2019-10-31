@@ -47,9 +47,7 @@ export function useAdmin() {
 
     const handleChangePermissions = (e, state) => {
       const value = e.target.value;
-      const clonePermissions = { ...permissions };
-      clonePermissions[state] = value;
-      setPermission(clonePermissions)
+      setPermission({ ...permissions, [state]: value })
     };
 
     const login = () => {
